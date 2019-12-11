@@ -96,13 +96,13 @@ variable "user_data_file" {
   description = "User data file"
 }
 
-variable "ebs_encrypted" {
+variable "root_encrypted" {
   type        = bool
   description = "Launched EC2 instance will be encrypted"
   default     = false
 }
 
-variable "ebs_kms_key_id" {
+variable "root_kms_key_id" {
   type        = string
   description = "The ARN for the KMS encryption key"
   default     = ""

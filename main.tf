@@ -96,6 +96,11 @@ resource "aws_instance" "default" {
 
   subnet_id = var.subnets[0]
 
+  root_block_device {
+    encrypted             = var.root_encrypted
+    kms_key_id            = var.root_kms_key_id
+  }
+
   tags = module.label.tags
 }
 

@@ -101,6 +101,12 @@ resource "aws_instance" "default" {
     kms_key_id            = var.root_kms_key_id
   }
 
+  metadata_options {
+    http_endpoint               = var.metadata_http_endpoint_enabled ? "enabled" : "disabled"
+    http_put_response_hop_limit = var.metadata_http_put_response_hop_limit
+    http_tokens                 = var.metadata_http_tokens_required ? "required" : "optional"
+  }
+
   tags = module.label.tags
 }
 
